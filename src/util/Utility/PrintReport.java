@@ -10,21 +10,13 @@ import net.sf.jasperreports.view.JRViewer;
 
 import javax.swing.*;
 import java.io.File;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.time.LocalDate;
 import java.util.*;
 import javafx.collections.FXCollections;
 import services.InventoryService;
-import util.connection.DBConnection;
 
 public class PrintReport extends JFrame {
 
     public void generateWithdrawReport() {
-        Connection conn = DBConnection.getDBConnection();
         InventoryService inventoryService = new InventoryService();
 
         ArrayList<WithdrawItem> unSortedWithdrawItemList = inventoryService.loadInventoryWithdrawList();
@@ -34,7 +26,13 @@ public class PrintReport extends JFrame {
             ArrayList<WithdrawItem> sortedWithdrawItemList = new ArrayList<WithdrawItem>();
 
             String startDate = unSortedWithdrawItemList.get(0).getwSDate();
-            String endDate = startDate;//unSortedWithdrawItemList.get(unSortedWithdrawItemList.size() - 1).getwSDate();
+            String endDate;
+            if(unSortedWithdrawItemList.size() == 1){
+                endDate = "-";
+            }else{
+                endDate = unSortedWithdrawItemList.get(unSortedWithdrawItemList.size() - 1).getwSDate();
+            }
+            
 
             for (WithdrawItem withdrawItem : unSortedWithdrawItemList) {
                 unsortedStringList.add(withdrawItem.getwSISID());

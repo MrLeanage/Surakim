@@ -4,22 +4,12 @@
  * and open the template in the editor.
  */
 package stock;
-import bean.InventoryItem;
 import bean.WithdrawItem;
-import java.lang.*;
-import java.awt.Color;
-import java.awt.Font;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import javax.swing.RowFilter;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableRowSorter;
 import services.InventoryService;
 import util.utility.PrintReport;
 
@@ -29,14 +19,6 @@ import util.utility.PrintReport;
  */
 public class StockOut extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Stock
-     */
-    
-    Connection conn=null;
-    PreparedStatement pst=null;
-    ResultSet rs=null;
-    String sqr;
     
     public StockOut() {
         initComponents();
@@ -175,14 +157,6 @@ public class StockOut extends javax.swing.JInternalFrame {
     }
     private void setDefaultsValues(){
         loadTableData();
-    }
-    private void setQuantityAndDiscount(){
-    }
-    private void setPrices(){
-       
-    }
-    private void setDefaults(){
-        
     }
     
    

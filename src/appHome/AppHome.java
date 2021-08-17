@@ -174,9 +174,8 @@ public class AppHome extends javax.swing.JFrame {
     private void stockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockButtonActionPerformed
         // TODO add your handling code here:
         StockHome stockHome = new StockHome();
-        StockHome stock = new StockHome();
         detailPane.removeAll();
-        detailPane.add(stock).setVisible(true);
+        detailPane.add(stockHome).setVisible(true);
 
     }//GEN-LAST:event_stockButtonActionPerformed
 

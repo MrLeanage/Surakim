@@ -7,23 +7,12 @@ package stock;
 
 import bean.InventoryItem;
 import bean.WithdrawItem;
-import java.lang.*;
-import java.awt.Color;
-import java.awt.Font;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
-import javax.swing.RowFilter;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableRowSorter;
 import services.InventoryService;
-
+ 
 /**
  *
  * @author dulshan
@@ -387,7 +376,6 @@ public class StockIn extends javax.swing.JInternalFrame {
         selectedInventoryItem.setiSQty(Integer.parseInt(tableModel.getValueAt(selectedRow, 2).toString()));
         selectedInventoryItem.setiSDate(tableModel.getValueAt(selectedRow, 3).toString());
 
-        System.out.println("Values :"+tableModel.getValueAt(selectedRow, 3).toString());
         iSIDField.setText(tableModel.getValueAt(selectedRow, 0).toString());
         iSNameField.setText(tableModel.getValueAt(selectedRow, 1).toString());
         ISQtyField.setValue(Integer.parseInt(tableModel.getValueAt(selectedRow, 2).toString()));
